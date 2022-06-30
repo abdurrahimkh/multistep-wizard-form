@@ -1,4 +1,12 @@
-const RenderButton = ({ formSetup, nextPage, formState: { isValid } }) => {
+const RenderButton = ({
+  formSetup,
+  nextPage,
+  formState: { isValid },
+  handleSubmit,
+}) => {
+  const submitForm = data => {
+    window.alert(JSON.stringify(data, null, 2));
+  };
   if (formSetup > 2) {
     return undefined;
   } else if (formSetup === 1) {
@@ -15,7 +23,8 @@ const RenderButton = ({ formSetup, nextPage, formState: { isValid } }) => {
     return (
       <button
         disabled={!isValid}
-        type="submit"
+        type="button"
+        onClick={handleSubmit(submitForm)}
         className="block w-full px-4 py-2  text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent  active:bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400  focus:outline-none focus:shadow-outline-purple"
       >
         Create Account

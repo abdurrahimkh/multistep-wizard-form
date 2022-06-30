@@ -27,14 +27,10 @@ const Register = () => {
     setFormSetup(current => current - 1);
   };
 
-  const submitForm = data => {
-    window.alert(JSON.stringify(data, null, 2));
-  };
-
   return (
     <div className="flex items-center min-h-[90vh] p-6 bg-gradient-to-b from-gray-50 to to-blue-200 dark:bg-gray-900">
       <div className="flex-1 h-full max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-800">
-        <form onSubmit={handleSubmit(submitForm)}>
+        <div>
           <div className="flex space-x-2 mt-2 ">
             {formSetup > 0 && (
               <button className="ml-2" type="button" onClick={() => prevPage()}>
@@ -94,8 +90,9 @@ const Register = () => {
             formSetup={formSetup}
             nextPage={nextPage}
             formState={formState}
+            handleSubmit={handleSubmit}
           />
-        </form>
+        </div>
       </div>
     </div>
   );
