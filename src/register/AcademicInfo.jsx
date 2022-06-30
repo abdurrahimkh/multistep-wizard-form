@@ -1,6 +1,6 @@
 const AcademicInfo = ({ register, formState, formSetup }) => {
   return (
-    <section className={formSetup === 2 ? "block" : "hidden"}>
+    <div className={formSetup === 2 ? "block" : "hidden"}>
       <div className="p-6">
         <h1 className="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
           Academic Info
@@ -58,7 +58,7 @@ const AcademicInfo = ({ register, formState, formSetup }) => {
           </select>
         </label>
       </div>
-    </section>
+    </div>
   );
 };
 

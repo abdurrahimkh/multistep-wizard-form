@@ -16,7 +16,6 @@ const RenderButton = ({ formSetup, nextPage, formState: { isValid } }) => {
       <button
         disabled={!isValid}
         type="submit"
-        // onClick={() => nextPage()}
         className="block w-full px-4 py-2  text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent  active:bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400  focus:outline-none focus:shadow-outline-purple"
       >
         Create Account
@@ -25,6 +24,7 @@ const RenderButton = ({ formSetup, nextPage, formState: { isValid } }) => {
   } else {
     return (
       <button
+        type="button"
         disabled={!isValid}
         onClick={() => nextPage()}
         className="block w-full px-4 py-2 cursor-pointer  text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent  active:bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 focus:outline-none focus:shadow-outline-purple"

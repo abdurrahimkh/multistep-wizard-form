@@ -1,7 +1,10 @@
-import { useState } from "react";
 import Register from "./register/Register";
 function App() {
-  return <Register />;
+  return (
+    <>
+      <Register />
+    </>
+  );
 }
 
 export default App;

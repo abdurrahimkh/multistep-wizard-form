@@ -1,6 +1,6 @@
 const PersonalInfo = ({ register, formState, formSetup }) => {
   return (
-    <section className={formSetup === 1 ? "block" : "hidden"}>
+    <div className={formSetup === 1 ? "block" : "hidden"}>
       <div className="p-6">
         <h1 className="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
           Personal Info
@@ -61,7 +61,7 @@ const PersonalInfo = ({ register, formState, formSetup }) => {
               Already have account? Login
             </a>
           </p> */}
-    </section>
+    </div>
   );
 };
 

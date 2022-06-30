@@ -1,6 +1,6 @@
 const Credentials = ({ setFormSetup, register, formState, formSetup }) => {
   return (
-    <section
+    <div
       className={formSetup === 0 ? "block" : "hidden"}
       onSubmit={() => setFormSetup(cur => cur + 1)}
     >
@@ -57,16 +57,16 @@ const Credentials = ({ setFormSetup, register, formState, formSetup }) => {
           <input
             className="block border rounded p-2 w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
             placeholder="example@email.com"
-            // {...register("email", {
-            //   required: { value: true, message: "Email Address is required" },
-            // })}
-            {...register("email", {
-              required: "Email is required",
-              pattern: {
-                value: /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/,
-                message: "please Enter Valid Email",
-              },
-            })}
+            {...register(
+              "email"
+              // , {
+              //   required: "Email is required",
+              // pattern: {
+              //   value: /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/,
+              //   message: "Invalid Email",
+              // },
+              // }
+            )}
           />
           {formState.errors.email && (
             <p className="text-red-600 text-sm mt-2">
@@ -80,12 +80,7 @@ const Credentials = ({ setFormSetup, register, formState, formSetup }) => {
             className="border rounded p-2 block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
             placeholder="***************"
             type="password"
-            {...register("password", {
-              required: {
-                value: true,
-                maxLength: 8,
-              },
-            })}
+            {...register("password")}
           />
           {formState.errors.password && (
             <p className="text-red-600 text-sm mt-2">
@@ -94,7 +89,7 @@ const Credentials = ({ setFormSetup, register, formState, formSetup }) => {
           )}
         </label>
       </div>
-    </section>
+    </div>
   );
 };
 
